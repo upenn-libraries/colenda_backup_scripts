@@ -9,6 +9,7 @@ This document details step-by-step methods for backing up and restoring each of 
 ## Bulwark Database (Repos, arks, Colenda application database)
 
 ### Backup:
+
 1. Source the correct environment variables for the MySQL root user and root password, database to be backed up, the name of the Docker database container, and the name of the backup directory location on the host where the MySQL dumps should be stored, example below:
   
    ```
