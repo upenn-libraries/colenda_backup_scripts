@@ -54,7 +54,6 @@ NOTE: This process can be expedited with a bash script.  The ```restore_mysql.sh
 ### Backup:
 Backup command:
 
-
 ```rsync -rlptv $BARE_REPOS_ORIGIN $BARE_REPOS_BACKUP```
 
 ### Restore: 
