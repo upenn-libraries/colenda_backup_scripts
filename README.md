@@ -29,7 +29,8 @@ This document details step-by-step methods for backing up and restoring each of 
    chmod 400 /$ENDPOINT/backup_${currentDate}.sql
    ```
 3. Verify that your backup SQL dump is at its intended destination.  Any errors in the MySQL dump will be logged to a file called "errors" in the ```$ENDPOINT``` directory.  
-4. This process can be scheduled as a cron job to run as root on a recurring basis.  The ```backup_mysql.sh``` bash script in this repository encapsulates the functionality, provided that the correct variables (specified in step 1) are sourced.  
+ 
+NOTE: This process can be scheduled as a cron job to run as root on a recurring basis.  The ```backup_mysql.sh``` bash script in this repository encapsulates the functionality, provided that the correct variables (specified in step 1) are sourced.  
 ### Restore:
 
 1. Source the correct environment variables, matching those sourced for the MySQL dump of the database you intend to restore, following the example in step 1 of the "Backups" section above.
