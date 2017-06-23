@@ -10,7 +10,7 @@ This document details step-by-step methods for backing up and restoring each of 
 
 ### Backup:
 
-1. Source the correct environment variables for the MySQL root user and root password, database to be backed up, the name of the Docker database container, and the name of the backup directory location on the host where the MySQL dumps should be stored, example below:
+1\. Source the correct environment variables for the MySQL root user and root password, database to be backed up, the name of the Docker database container, and the name of the backup directory location on the host where the MySQL dumps should be stored, example below:
   
    ```
    MYSQL_USER=root
@@ -26,14 +26,14 @@ This document details step-by-step methods for backing up and restoring each of 
    export ENDPOINT;
    ```
      
-2. With the MySQL container up and running, run the following commands:
+2\. With the MySQL container up and running, run the following commands:
   
    ```
    docker exec $MYSQL_CONTAINER /usr/bin/mysqldump -u $MYSQL_USER --password=$MYSQL_PASS $MYSQL_DB > /$ENDPOINT/backup_${currentDate}.sql 2>/$ENDPOINT/errors
    chmod 400 /$ENDPOINT/backup_${currentDate}.sql
    ```
      
-3. Verify that your backup SQL dump is at its intended destination.  Any errors in the MySQL dump will be logged to a file called "errors" in the ```$ENDPOINT``` directory.  
+3\. Verify that your backup SQL dump is at its intended destination.  Any errors in the MySQL dump will be logged to a file called "errors" in the ```$ENDPOINT``` directory.  
   
 NOTE: This process can be scheduled as a cron job to run as root on a recurring basis.  The ```backup_mysql.sh``` bash script in this repository encapsulates the functionality, provided that the correct variables (specified in step 1) are sourced.  
   
