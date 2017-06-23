@@ -214,7 +214,7 @@ To rebuild the entire application from scratch, the following assets, all taken 
      
    You will see output complaining about using a password at the command line (which would be perfectly valid, were we not using docker exec commands and sourced variables). Once this is complete, go to the application in a browser and verify that the correct data has been restored.
 
-9\. To restore the bare git repos: from within the ```colenda_backup_scripts``` directory, issue the following command:
+9. To restore the bare git repos: from within the ```colenda_backup_scripts``` directory, issue the following command:
      
    ```
     ./restore_repos.sh /absolute/path/to/git_repos
@@ -222,10 +222,10 @@ To rebuild the entire application from scratch, the following assets, all taken 
      
    You will see output relating to the git repos transferred via rsync.  Once this is complete, verify that the repos are in their intended destination with correct permissions.  You may need to change ownership to the gitannex user in Bulwark (9999:9999).
 
-10\. To restore Fedora: this one is a little trickier.  From within the ```colenda_backup_scripts``` directory, issue the following command:
+10. To restore Fedora: this one is a little trickier.  From within the ```colenda_backup_scripts``` directory, issue the following command:
       
     ```
-    ./restore_repos.sh local/path/within/bkup/to/fedora_backup
+      ./restore_repos.sh local/path/within/bkup/to/fedora_backup
     ```
     
     The Fedora container has a volume mounted to a local directory on the server to allow ease of backup transfer.  The Fedora restore command looks in the folder called "bkup" inside the container, which is mapped to the ```$LOCAL_BACKUP``` directory on the host. To find out where this is, run ```docker inspect $FEDORA_CONTAINER | grep LOCAL_BACKUP``` on the running Fedora container.  The backup from which to restore the Fedora installation's data must be inside this directory.  As Fedora already looks in this directory when looking for a backup endpoint, the value of ```$LOCAL_BACKUP``` should not be included in the command line argument.
@@ -235,7 +235,7 @@ To rebuild the entire application from scratch, the following assets, all taken 
     Assuming ```$LOCAL_BACKUP =/backup_directory```, move the Fedora restore directory under it. Assuming the Fedora restore directory is now at ```/backup_directory/2017.06.23/fcrepo``` on the host, the command to restore Fedora would look like this:
       
     ```
-    ./restore_repos.sh 2017.06.23/fcrepo
+      ./restore_repos.sh 2017.06.23/fcrepo
     ```
       
     You will see output related to this transfer.  Once complete, navigate to ```$HOSTNAME:8080/fcrepo/rest``` in a browser, look for the ```prod``` endpoint, and click around to make sure your objects and their associated metadata and binaries are there. 
