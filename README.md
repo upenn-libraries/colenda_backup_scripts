@@ -121,7 +121,8 @@ NOTE: This process can be run with a bash script.
    ``` 
      
    This may take a while, depending on how much data is in the Fedora backup.
-3\. Verify that the data is visible in the front end of the application.  If you see Rails errors indicating that ActiveFedora cannot find objects, this indicates that the Solr index is likely out of sync with what is in Fedora.  Follow the steps in the Solr:Restore section below, restart all containers, and verify that the application is functional with the intended data.
+   
+2\. Verify that the data is visible in the front end of the application.  If you see Rails errors indicating that ActiveFedora cannot find objects, this indicates that the Solr index is likely out of sync with what is in Fedora.  Follow the steps in the Solr:Restore section below, restart all containers, and verify that the application is functional with the intended data.
   
 ## Solr
   
