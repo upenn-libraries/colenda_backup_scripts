@@ -6,6 +6,6 @@ then
   exit 1
 fi
 
-$BACKUPS_ORIGIN="$1"
+BACKUPS_ORIGIN="$1"
 
 rsync -rlptv $BACKUPS_ORIGIN/ $BARE_REPOS_ORIGIN/
