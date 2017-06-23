@@ -2,6 +2,6 @@
 
 currentDate=$(date "+%Y.%m.%d")
 
-mkdir -p $ENDPOINT/${currentDate}/$BARE_REPOS_ENPOINT
+mkdir -p $ENDPOINT/${currentDate}/$BARE_REPOS_ENDPOINT
 
-rsync -rlptv $BARE_REPOS_ORIGIN/ $ENDPOINT/${currentDate}/$BARE_REPOS_ENPOINT/ > $ENDPOINT/${currentDate}/$BARE_REPOS_ENPOINT/rsync_log
+rsync -rlptv $BARE_REPOS_ORIGIN/ $ENDPOINT/${currentDate}/$BARE_REPOS_ENDPOINT/ > $ENDPOINT/${currentDate}/$BARE_REPOS_ENDPOINT/rsync_log
