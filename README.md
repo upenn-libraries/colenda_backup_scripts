@@ -240,7 +240,7 @@ To rebuild the entire application from scratch, the following assets, all taken 
       
     You will see output related to this transfer.  Once complete, navigate to ```$HOSTNAME:8080/fcrepo/rest``` in a browser, look for the ```prod``` endpoint, and click around to make sure your objects and their associated metadata and binaries are there. 
 
-11\. To restore the Solr index: from within the ```colenda_backup_scripts``` directory, issue the following command:
+11. To restore the Solr index: from within the ```colenda_backup_scripts``` directory, issue the following command:
       
     ```
     ./reindex_solr.sh 
