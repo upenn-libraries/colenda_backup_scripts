@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-currentDate=$(date "+%Y.%m.%d-%H.%M.%S")
+currentDate=$(date "+%Y.%m.%d")
 
 docker exec $FEDORA_CONTAINER mkdir -p /bkup/${currentDate}/${FEDORA_ENDPOINT}
 

@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-currentDate=$(date "+%Y.%m.%d-%H.%M.%S")
+currentDate=$(date "+%Y.%m.%d")
 
 mkdir -p $ENDPOINT/${currentDate}/$BARE_REPOS_ENPOINT
 
