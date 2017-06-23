@@ -10,6 +10,7 @@ This document details step-by-step methods for backing up and restoring each of 
 
 ### Backup:
 1. Source the correct environment variables for the MySQL root user and root password, database to be backed up, the name of the Docker database container, and the name of the backup directory location on the host where the MySQL dumps should be stored, example below:
+  
    ```
    MYSQL_USER=root
    MYSQL_PASS=xyz
@@ -23,6 +24,7 @@ This document details step-by-step methods for backing up and restoring each of 
    export MYSQL_DB;
    export ENDPOINT;
    ```
+     
 2. With the MySQL container up and running, run the following commands:
    ```
    docker exec $MYSQL_CONTAINER /usr/bin/mysqldump -u $MYSQL_USER --password=$MYSQL_PASS $MYSQL_DB > /$ENDPOINT/backup_${currentDate}.sql 2>/$ENDPOINT/errors
